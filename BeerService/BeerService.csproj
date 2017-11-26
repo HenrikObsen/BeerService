@@ -102,30 +102,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Images\Big\BrownAleStor.png" />
-    <Content Include="Images\Big\BrunUgleStor.png" />
-    <Content Include="Images\Big\CanadianStor.png" />
-    <Content Include="Images\Big\DangerStor.png" />
-    <Content Include="Images\Big\DecoStor.png" />
-    <Content Include="Images\Big\DunkelStor.png" />
+    <Content Include="Images\Big\BrownAle.png" />
+    <Content Include="Images\Big\BrunUgle.png" />
+    <Content Include="Images\Big\Canadian.png" />
+    <Content Include="Images\Big\Danger.png" />
+    <Content Include="Images\Big\Deco.png" />
+    <Content Include="Images\Big\Dunkel.png" />
     <Content Include="Images\Big\GingerLager.png" />
-    <Content Include="Images\Big\HyldeStor.png" />
-    <Content Include="Images\Big\IPAStor.png" />
+    <Content Include="Images\Big\Hylde.png" />
+    <Content Include="Images\Big\IPA.png" />
     <Content Include="Images\Big\Lakrids.png" />
-    <Content Include="Images\Big\MexicanStor.png" />
-    <Content Include="Images\Big\Mjoed2015Stor.png" />
-    <Content Include="Images\Big\Mjoed2016Stor.png" />
-    <Content Include="Images\Big\NewCasBrownStor.png" />
-    <Content Include="Images\Big\NewRedIrishStor.png" />
-    <Content Include="Images\Big\PilsnerStor.png" />
-    <Content Include="Images\Big\PitstopStor.png" />
-    <Content Include="Images\Big\RedAbbeyStor.png" />
-    <Content Include="Images\Big\RedIrishStor.png" />
-    <Content Include="Images\Big\SmashIPAStor.png" />
-    <Content Include="Images\Big\TjekkiskStor.png" />
+    <Content Include="Images\Big\Mexican.png" />
+    <Content Include="Images\Big\Mjoed2015%27.png" />
+    <Content Include="Images\Big\Mjoed2016.png" />
+    <Content Include="Images\Big\NewCasBrown.png" />
+    <Content Include="Images\Big\NewRedIrish.png" />
+    <Content Include="Images\Big\Pilsner.png" />
+    <Content Include="Images\Big\Pitstop.png" />
+    <Content Include="Images\Big\RedAbbey.png" />
+    <Content Include="Images\Big\RedIrish.png" />
+    <Content Include="Images\Big\SmashIPA.png" />
+    <Content Include="Images\Big\Tjekkisk.png" />
     <Content Include="Images\Big\ToxicWaste.png" />
-    <Content Include="Images\Big\VeinnaLagerStor.png" />
+    <Content Include="Images\Big\VeinnaLager.png" />
+    <Content Include="Images\Slides\Slide01.jpg" />
+    <Content Include="Images\Slides\Slide02.jpg" />
+    <Content Include="Images\Slides\Slide03.jpg" />
     <Content Include="Images\Small\BrownAle.png" />
     <Content Include="Images\Small\BrunUgle.png" />
     <Content Include="Images\Small\Canadian.png" />
@@ -150,22 +157,49 @@
     <Content Include="Images\Small\Tjekkisk.png" />
     <Content Include="Images\Small\ToxicWaist.png" />
     <Content Include="Images\Small\ViennaLager.png" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BeerControler.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Duser\AutoFac.cs" />
+    <Compile Include="Duser\AutoGen.cs" />
     <Compile Include="Duser\Conn.cs" />
     <Compile Include="Duser\Mapper.cs" />
+    <Compile Include="Factories\BeerFac.cs" />
+    <Compile Include="Factories\CategoryFac.cs" />
+    <Compile Include="Factories\UserFac.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Mailer.cs" />
+    <Compile Include="Helpers\ResponseModel.cs" />
+    <Compile Include="Helpers\Uploader.cs" />
+    <Compile Include="Models\Beer.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -175,8 +209,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

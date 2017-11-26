@@ -1,6 +1,6 @@
 ﻿using System.Data.SqlClient;
 
-namespace Duser
+namespace BeerService
 {
     public static class Conn
     {
