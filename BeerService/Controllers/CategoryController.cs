@@ -11,21 +11,8 @@ namespace BeerService
     public class CategoryController : ApiController
     {
         CategoryFac cf = new CategoryFac();
-        BeerFac bf = new BeerFac();
 
-        [Route("api/Beer/GetAll")]
-        [HttpGet]
-        public IEnumerable<Beer> GetAll()
-        {
-            return bf.GetAll();
-        }
-
-        [Route("api/Beer/GetList/{id}")]
-        [HttpGet]
-        public IEnumerable<Beer> GetList(int id)
-        {
-            return bf.GetBy("CategoryID", id);
-        }
+        
 
         [Route("api/Category/GetName/{id}")]
         [HttpGet]
@@ -54,19 +41,10 @@ namespace BeerService
         [HttpGet]
         public IEnumerable<Category> GetAllBeers()
         {
-            //ResponseModel _objResponseModel = new ResponseModel();
-            //_objResponseModel.Data = cf.GetAll();
-            //_objResponseModel.Status = true;
-            //_objResponseModel.Message = "Data Received successfully";
-            return cf.GetAll();
+                     return cf.GetAll();
         }
 
-        [Route("api/Beer/Get/{id}")]
-        [HttpGet]
-        public Beer GetBeer(int id)
-        {
-            return bf.Get(id);
-        }
+        
 
         [Route("api/Category/GetAll/{column}/{direction}")]
         [HttpGet]
@@ -178,5 +156,29 @@ namespace BeerService
                 throw new System.Web.HttpException(403, "You must be logged in to access this resource.");
             }
         }
+
+        //************************************************** Beer Methods ********************************************
+
+        //BeerFac bf = new BeerFac();
+        //[Route("api/Beer/Get/{id}")]
+        //[HttpGet]
+        //public Beer GetBeer(int id)
+        //{
+        //    return bf.Get(id);
+        //}
+
+        //[Route("api/Beer/GetAll")]
+        //[HttpGet]
+        //public IEnumerable<Beer> GetAll()
+        //{
+        //    return bf.GetAll();
+        //}
+
+        //[Route("api/Beer/GetList/{id}")]
+        //[HttpGet]
+        //public IEnumerable<Beer> GetList(int id)
+        //{
+        //    return bf.GetBy("CategoryID", id);
+        //}
     }
 }
