@@ -5,9 +5,13 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.IO;
+using System.Web.Http.Cors;
+
 
 namespace BeerService
 {
+
+    [EnableCors(origins: "http://app.henrikobsen.dk", headers: "*", methods: "*")]
     public class CategoryController : ApiController
     {
         CategoryFac cf = new CategoryFac();
