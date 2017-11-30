@@ -12,7 +12,14 @@ namespace BeerService
     {
         CategoryFac cf = new CategoryFac();
 
-        
+
+
+        [Route("api/Category/test/")]
+        [HttpPost]
+        public string test(string c)        {
+           
+            return c.ToUpper();
+        }
 
         [Route("api/Category/GetName/{id}")]
         [HttpGet]
