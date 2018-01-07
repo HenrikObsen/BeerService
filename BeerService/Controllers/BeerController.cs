@@ -11,6 +11,9 @@ namespace BeerService
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class BeerController : ApiController
     {
+
+     
+
         BeerFac bf = new BeerFac();
         [Route("api/Beer/Get/{id}")]
         [HttpGet]
@@ -32,6 +35,37 @@ namespace BeerService
         {
             return bf.GetBy("CategoryID", id);
         }
+
+
+
+        //****************************** Categories *******************************
+
+        //CategoryFac cf = new CategoryFac();
+
+        //[Route("api/Beer/DeleteCat/{id}")]
+        //[HttpGet]
+        //public bool DeleteCat(int id)
+        //{
+        //    cf.Delete(id);
+
+        //    return true;
+        //}
+
+
+       
+        //[Route("api/Beer/AddCat/")]
+        //[HttpPost]
+        //public int AddCat(Category c, HttpRequestMessage request)
+        //{
+
+        //        IEnumerable<string> headerValues = request.Headers.GetValues("Authorization");
+        //        var token = headerValues.FirstOrDefault();
+            
+        //    int id = 0;
+        //    id = cf.Insert(c);
+
+        //    return id;
+        //}
 
     }
 }

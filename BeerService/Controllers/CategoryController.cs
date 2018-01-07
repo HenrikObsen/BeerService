@@ -11,7 +11,8 @@ using System.Web.Http.Cors;
 namespace BeerService
 {
 
-    [EnableCors(origins: "http://app.henrikobsen.dk", headers: "*", methods: "*")]
+    //[EnableCors(origins: "http://app.henrikobsen.dk", headers: "*", methods: "*")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class CategoryController : ApiController
     {
         CategoryFac cf = new CategoryFac();
@@ -48,7 +49,15 @@ namespace BeerService
                      return cf.GetAll();
         }
 
-        
+        [Route("api/Category/DeleteCat/{id}")]
+        [HttpGet]
+        public bool DeleteCat(int id)
+        {
+            cf.Delete(id);
+
+            return true;
+        }
+
 
         [Route("api/Category/GetAll/{column}/{direction}")]
         [HttpGet]
@@ -58,22 +67,19 @@ namespace BeerService
         }
 
 
-        [Route("api/Category/Add/")]
+
+        [Route("api/Category/AddCat/")]
         [HttpPost]
-        public string Add(Category c)
+        public int AddCat(Category c, HttpRequestMessage request)
         {
-            cf.Insert(c);
 
-            return c.Name;
-        }
+            IEnumerable<string> headerValues = request.Headers.GetValues("Authorization");
+            var token = headerValues.FirstOrDefault();
 
+            int id = 0;
+            id = cf.Insert(c);
 
-
-        [Route("api/Category/Delete/{id}")]
-        [HttpGet]
-        public void Delete(int id)
-        {
-            cf.Delete(id);
+            return id;
         }
 
 
